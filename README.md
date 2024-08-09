@@ -4,7 +4,7 @@ A simple translator API which uses a locally running model (facebook/mbart-large
 
 # Instructions
 
-1. Clone this repository
+1. Clone this repository `git clone https://github.com/nf1973/simple-translator`
 2. CD into the directory where the app.py file is located
 3. Run `python -m venv venv`
 4. Run `source venv/bin/activate`
