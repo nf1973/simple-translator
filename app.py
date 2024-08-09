@@ -1,5 +1,8 @@
 from flask import Flask, request, jsonify
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
+from datetime import datetime
+
+verbose_logging = True
 
 app = Flask(__name__)
 
@@ -38,6 +41,10 @@ def translate_text(from_lang: str, to_lang: str, orig_text: str) -> dict:
 def fix_spaces(input_string: str) -> str:
     return input_string.replace("%20", " ")
 
+def write_to_log(orig_text: str, translated_text: str) -> None:
+        with open("log.txt", "a", encoding="utf-8") as f:
+            f.write(f"{datetime.now()}: {orig_text} -> {translated_text}\n")
+
 @app.route('/get', methods=['GET'])
 def translate():
     orig_text = request.args.get('q')
@@ -62,7 +69,8 @@ def translate():
     
     # Translate the text, print the result on the console and return it
     result = translate_text(from_lang, to_lang, orig_text)
-    print (f"{from_lang} -> {to_lang} : {orig_text} -> {result.get('responseData').get('translatedText')}")
+    if verbose_logging:
+        write_to_log(orig_text, result.get('responseData').get('translatedText'))
     return jsonify(result)
 
 if __name__ == '__main__':
