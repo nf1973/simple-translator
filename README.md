@@ -11,7 +11,7 @@ A simple translator API which uses a locally running model (facebook/mbart-large
 5. Run `pip install -r requirements.txt`
    _Note: This will download some python packages to the venv folder_
 6. Run `python app.py`
-   _Note: This will download the facebook/mbart-large-50-many-to-many-mmt model which is about 2.5GB to ~/.cache/huggingface/hub/_
+   _Note: This will download the facebook/mbart-large-50-many-to-many-mmt model (from https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt) which is about 2.5GB to ~/.cache/huggingface/hub/_
 
 At this points you should see something like:
 
