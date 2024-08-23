@@ -34,7 +34,7 @@ You can now make GET requests to http://localhost:5000/get like in the following
 
 URL:
 
-`http://localhost:5000/get?q=你这疯子，谁会给你十亿韩元？&langpair=zh-CN|e`
+`http://localhost:5000/get?q=你这疯子，谁会给你十亿韩元？&langpair=zh-CN|en`
 
 Response:
 
