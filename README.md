@@ -7,10 +7,12 @@ A simple translator API which uses a locally running model (facebook/mbart-large
 1. Clone this repository `git clone https://github.com/nf1973/simple-translator`
 2. CD into the directory where the app.py file is located
 3. Run `python -m venv .venv`
-4. Run `source .venv/bin/activate`
-5. Run `pip install -r requirements.txt`
+4. a) If you are on MacOS, run `source .venv/bin/activate`
+    or
+   b) If you are on Windows, run `.venv\Scripts\activate`
+6. Run `pip install -r requirements.txt`
    _Note: This will download some python packages to the venv folder_
-6. Run `python app.py`
+7. Run `python app.py`
    _Note: This will download the facebook/mbart-large-50-many-to-many-mmt model (from https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt) which is about 2.5GB to ~/.cache/huggingface/hub/_
 
 At this points you should see something like:
